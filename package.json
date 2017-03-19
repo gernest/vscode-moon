@@ -8,17 +8,40 @@
         "vscode": "^1.10.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "Languages"
     ],
     "activationEvents": [
         "onCommand:extension.sayHello"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
+        "languages": [
+            {
+                "id": "moonscript",
+                "aliases": [
+                    "MoonScript",
+                    "moonscript"
+                ],
+                "extensions": [
+                    ".moon"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "moonscript",
+                "scopeName": "source.moonscript",
+                "path": "./syntaxes/moonscript.tmLanguage"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
